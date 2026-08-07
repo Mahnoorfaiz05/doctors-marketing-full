@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope), Arial, sans-serif;
+  --font-display: var(--font-instrument), Georgia, serif;
+
+  --color-page: #f3f7fc;
+  --color-navy: #0b213a;
+  --color-deep: #071c38;
+  --color-footer: #031a38;
+  --color-brand: #0d73f6;
+  --color-brand-dark: #0865dd;
+  --color-accent: #ff8a3d;
+  --color-accent-dark: #f47b35;
+  --color-soft-blue: #eef5ff;
+  --color-soft-warm: #fff3ea;
+  --color-muted: #5b6470;
+  --color-line: #e2e8f0;
+
+  --shadow-shell: 0 24px 70px rgba(7, 28, 56, 0.1);
+  --shadow-card: 0 16px 42px rgba(11, 33, 58, 0.08);
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 bg-page font-sans text-navy antialiased;
+    background-image: linear-gradient(180deg, #dceafd 0, #f3f7fc 240px, #f3f7fc 100%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply tracking-[-0.045em];
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  summary {
+    @apply focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent;
+  }
+
+  ::selection {
+    @apply bg-blue-200 text-deep;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
